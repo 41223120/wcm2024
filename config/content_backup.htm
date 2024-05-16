@@ -161,7 +161,62 @@
 <p>git clone 倉儲網址_協定.git 指定目錄與否</p>
 <p>若要取下帶有子模組的倉儲, 且可能該子模組還有設定其他子模組, 則必須要加上 --recurse-submodules:</p>
 <p>git clone --recurse-submodules 倉儲網址_協定.git 指定目錄與否</p>
-<p><span><span class="ui-provider rn uw ux uy uz va vb vc vd ve vf vg vh vi vj vk vl vm vn vo vp vq vr vs vt vu vv vw vx vy vz wa wb wc wd" dir="ltr"> </span></span></p>
+<h2>W4</h2>
+<p>有關建立網站:<span>網站指的是 Web site針對網頁瀏覽器檢視的內容加以管理，利用 Github 所提供的 Pages 功能來建立網頁進行管理。</span></p>
+<p><span>Replit靜態網站檢視:若要執行動態網站，可以在 Shell 執行 python3 main.py 或者使用 Replit 的 Run 按鍵， Shell 執行 python3 main2.py 就可以執行倉儲內的靜態網站檢視。</span></p>
+<p><span>Replit建立分組倉儲權限:</span></p>
+<p>分組網站 import 到 Replit, 必須自行在 /home/runner/.ssh 目錄下建立 id_rsa 與 config (id_rsa.pub 必須登錄到 Github 對應帳號), 其中的 config 內容為:</p>
+<div>
+<div class="syntaxhighlighter jscript" id="highlighter_355090">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="jscript plain">Host github.com</code></div>
+<div class="line number2 index1 alt1"><code class="jscript plain">User git</code></div>
+<div class="line number3 index2 alt2"><code class="jscript plain">Hostname github.com</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>ssh.py 程式內容如下:</p>
+<div>
+<div class="syntaxhighlighter python" id="highlighter_462850">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="python keyword">import</code> <code class="python plain">os</code></div>
+<div class="line number2 index1 alt1"><code class="python keyword">if</code> <code class="python keyword">not</code> <code class="python plain">os.path.exists(</code><code class="python string">"/home/runner/.ssh"</code><code class="python plain">): </code></div>
+<div class="line number3 index2 alt2"><code class="python spaces">    </code><code class="python plain">os.makedirs(</code><code class="python string">"/home/runner/.ssh"</code><code class="python plain">) </code></div>
+<div class="line number4 index3 alt1"><code class="python plain">os.system(</code><code class="python string">"mv ./downloads/id_rsa.txt /home/runner/.ssh/id_rsa"</code><code class="python plain">)</code></div>
+<div class="line number5 index4 alt2"><code class="python plain">os.system(</code><code class="python string">"mv ./downloads/config.txt /home/runner/.ssh/config"</code><code class="python plain">)</code></div>
+<div class="line number6 index5 alt1"><code class="python plain">os.system(</code><code class="python string">"chmod og-rwx /home/runner/.ssh/id_rsa"</code><code class="python plain">)</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <h2>w6</h2>
 <p><span><span class="ui-provider rn uw ux uy uz va vb vc vd ve vf vg vh vi vj vk vl vm vn vo vp vq vr vs vt vu vv vw vx vy vz wa wb wc wd" dir="ltr">1.git 的發展歷史:</span></span><span><span class="ui-provider rn uw ux uy uz va vb vc vd ve vf vg vh vi vj vk vl vm vn vo vp vq vr vs vt vu vv vw vx vy vz wa wb wc wd" dir="ltr">世界上最流行的版本控制系统之一。</span></span></p>
 <p>   git創作人相關履歷:是一位計算機學者，為現代軟體開發有重要的基礎。</p>
