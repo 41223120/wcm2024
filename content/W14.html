@@ -2,7 +2,7 @@
         <head>
         <title>cmsimde_site</title>
         <meta charset="utf-8">
-<meta property="head" content="H3">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -142,27 +142,30 @@ img.add_border {
           </div>
 
         </header>
-    <div id="tipue_search_content">W13 << <a href='W13.html'>Previous</a> <a href='3. 修改初始密碼.html'>Next</a> >> 3. 修改初始密碼<br /><h1>2. 使用 SSH 客戶端遠端登入</h1>
-<p>學員需要一個 SSH 客戶端來連接到主機。以下是使用不同操作系統的簡單說明：</p>
-<h4><strong>Windows</strong></h4>
-<ul>
-<li>可以使用 <a href="https://www.putty.org/" rel="noreferrer" target="_new">PuTTY</a> 或 <a rel="noreferrer" target="_new">Windows Terminal</a>。</li>
-<li>打開 PuTTY，輸入 <code>stud.cycu.org</code> 作為主機名，並輸入用戶名和初始密碼。</li>
-</ul>
-<h4><strong>macOS 和 Linux</strong></h4>
-<ul>
-<li>打開終端（Terminal）。</li>
-<li>輸入以下命令：
-<div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
-<div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md">ssh 學號@stud.cycu.org</div>
+    <div id="tipue_search_content">7. 獲取幫助和支持 << <a href='7. 獲取幫助和支持.html'>Previous</a> <a href='Brython-2.html'>Next</a> >> Brython-2<br /><h1>W14</h1>
+<p>可攜系統的批次檔案:</p>
+<p>針對不同的Python版本修改批次檔案，兩個指令在path和set環境，版本不對就開不了。</p>
+<p>Replit</p>
 </div>
-例如，如果學號是 <code>s1234567</code>，則輸入：
-<div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
-<div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md">ssh s1234567@stud.cycu.org</div>
 </div>
-</li>
-</ul>
-<br />W13 << <a href='W13.html'>Previous</a> <a href='3. 修改初始密碼.html'>Next</a> >> 3. 修改初始密碼</div>
+</div>
+</div>
+</div>
+</div>
+<p><a href="https://replit.com">https://replit.com</a></p>
+<p>利用 init_replit 指令安裝所需 Python 模組<br/><br/>chmod u+x init_replit<br/><br/>./init_replit</p>
+<p dir="auto">On Replit:</p>
+<p dir="auto">.replit: python3 main.py</p>
+<p dir="auto">chmod u+x cms init_replit</p>
+<p dir="auto">./init_replit</p>
+<p dir="auto" style="padding-left: 30px;">for cmsimde_site (not needed): git submodule update --init --recursive</p>
+<p dir="auto" style="padding-left: 30px;">for cmsimde: pip install flask flask_cors bs4 lxml pelican markdown gevent</p>
+<p dir="auto">password generator: <a href="https://mde.tw/cmsite/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/b92b16621dd0246c352cf13d6463b333/raw/0bfa669750aba3abe48554509bbd43d65b6e5c82/hashlib_password_generator.py">https://mde.tw/cmsite/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/b92b16621dd0246c352cf13d6463b333/raw/0bfa669750aba3abe48554509bbd43d65b6e5c82/hashlib_password_generator.py</a> </p>
+<p dir="auto"></p>
+<p dir="auto">for IPv6 only Ubuntu:<br/><br/>.ssh 目錄中的 config, 將 SSH session 名稱設為 github.com:<br/><br/>Host github.com<br/>User git<br/>Hostname github.com<br/>ProxyCommand /usr/bin/ncat --proxy p4.cycu.org:3128 --proxy-type http %h %p<br/><br/>for Replit:<br/><br/>.ssh 目錄中的 config, 將 SSH session 名稱設為 github.com:<br/><br/>Host github.com<br/>User git<br/>Hostname github.co<br/>#since Replit works for IPv4, therefore no ProxyCommand setting needed<br/>#ProxyCommand /usr/bin/ncat --proxy p4.cycu.org:3128 --proxy-type http %h %p</p>
+<p></p>
+<p></p>
+<br />7. 獲取幫助和支持 << <a href='7. 獲取幫助和支持.html'>Previous</a> <a href='Brython-2.html'>Next</a> >> Brython-2</div>
 
     <!-- footer -->
       <div class="container">
