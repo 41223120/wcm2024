@@ -334,6 +334,209 @@ document["echo"].bind("click", click)</pre>
 <p dir="auto">廣泛的學習經驗：鼓勵學生<strong>探索不同科目和學科的廣泛教育的重要性</strong>。應該<strong>促進智識好奇心</strong>和<strong>批判性思維</strong>。</p>
 <p dir="auto">2.如何將影片嵌入網頁:上傳影片到youtube上，之後到自己的youtube影片下，點<span>分享</span>選擇第一個，把右側<span>超連結程式</span>碼複製，編輯網站，點Source code<span>，</span>把內容複製貼上。</p>
 <h2 dir="auto">W13</h2>
+<p>Linux</p>
+<p>能不能讓每一位學員都擁有遠端登入 stud.cycu.org 這台主機的帳號?</p>
+<div class="flex flex-grow flex-col max-w-full">
+<div class="min-h-[20px] text-message flex flex-col items-start whitespace-pre-wrap break-words [.text-message+&amp;]:mt-5 juice:w-full juice:items-end overflow-x-auto gap-2" data-message-author-role="assistant" data-message-id="cad8176f-721c-46ae-aa7b-8b8cf24f1dff" dir="auto">
+<div class="flex w-full flex-col gap-1 juice:empty:hidden juice:first:pt-[3px]">
+<div class="markdown prose w-full break-words dark:prose-invert light">
+<ol>
+<li>
+<p><strong>收集學員信息</strong>：</p>
+<ul>
+<li>確保擁有所有需要開設帳號的學員信息，例如學號、姓名、電子郵件等。</li>
+</ul>
+</li>
+<li>
+<p><strong>批量創建帳號</strong>：</p>
+<ul>
+<li>可以編寫腳本來自動創建多個用戶帳號。以下是一個簡單的 Bash 腳本範例，假設你有一個包含學員信息的 CSV 文件（例如 <code>students.csv</code>）：
+<div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
+<div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span class="hljs-meta">#!/bin/bash</span> input=<span class="hljs-string">"students.csv"</span> <span class="hljs-keyword">while</span> IFS=, <span class="hljs-built_in">read</span> -r student_id student_name student_email <span class="hljs-keyword">do</span> sudo useradd -m <span class="hljs-string">"<span class="hljs-variable">$student_id</span>"</span> -c <span class="hljs-string">"<span class="hljs-variable">$student_name</span>"</span> -s /bin/bash <span class="hljs-built_in">echo</span> <span class="hljs-string">"<span class="hljs-variable">$student_id</span>:default_password"</span> | sudo chpasswd <span class="hljs-built_in">echo</span> <span class="hljs-string">"User <span class="hljs-variable">$student_id</span> created with default password."</span> <span class="hljs-keyword">done</span> &lt; <span class="hljs-string">"<span class="hljs-variable">$input</span>"</span></div>
+</div>
+<ul>
+<li>在這個腳本中，<code>students.csv</code> 文件格式為：<code>學號,姓名,電子郵件</code></li>
+<li><code>default_password</code> 為初始密碼，建議用戶第一次登入後修改密碼。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>配置遠端登入</strong>：</p>
+<ul>
+<li>確保 SSH 服務已安裝並運行
+<div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
+<div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md">
+<div class="flex items-center"><code class="!whitespace-pre hljs language-bash">sudo apt-get update sudo apt-get install openssh-server sudo systemctl <span class="hljs-built_in">enable</span> ssh sudo systemctl start ssh </code></div>
+</div>
+</div>
+</li>
+<li>確保每個用戶都能通過 SSH 進行遠端登入：
+<div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
+<div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md"><code class="!whitespace-pre hljs language-bash">sudo nano /etc/ssh/sshd_config </code></div>
+</div>
+<ul>
+<li>檢查並確保 <code>PermitRootLogin</code> 設置為 <code>prohibit-password</code> 或 <code>no</code> 以提高安全性。</li>
+<li>確保 <code>PasswordAuthentication</code> 設置為 <code>yes</code>。</li>
+<li>保存文件並重啟 SSH 服務：
+<div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
+<div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>bash </span>sudo systemctl restart ssh</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>通知學員</strong>：</p>
+<ul>
+<li>通知每位學員他們的帳號信息以及初始密碼，並提醒他們首次登入後立即修改密碼。</li>
+</ul>
+</li>
+<li>
+<p><strong>安全考慮</strong>：</p>
+<ul>
+<li>要求學員在首次登入後修改密碼，可以在 <code>/etc/skel/.bashrc</code> 中添加提示信息：
+<div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
+<div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>bash</span>考慮設置失敗登入嘗試限制防止暴力破解：</div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<p>這些步驟應該可以幫助你為所有學員創建遠端登入 stud.cycu.org 主機的帳號。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-1 flex gap-3 empty:hidden juice:-ml-3">
+<div class="items-center justify-start rounded-xl p-1 flex">
+<div class="flex items-center">
+<div class="flex items-center pb-0.5 juice:pb-0"><span class="line-clamp-1 text-sm"></span></div>
+</div>
+</div>
+</div>
+<p>擁有帳號, 然後呢?</p>
+<div class="w-full text-token-text-primary" data-scroll-anchor="false" data-testid="conversation-turn-3" dir="auto">
+<div class="py-2 juice:py-[18px] px-3 text-base md:px-4 m-auto md:px-5 lg:px-1 xl:px-5">
+<div class="mx-auto flex flex-1 gap-3 text-base juice:gap-4 juice:md:gap-6 md:max-w-3xl lg:max-w-[40rem] xl:max-w-[48rem]">
+<div class="group/conversation-turn relative flex w-full min-w-0 flex-col agent-turn">
+<div class="flex-col gap-1 md:gap-3">
+<div class="flex flex-grow flex-col max-w-full">
+<div class="min-h-[20px] text-message flex flex-col items-start whitespace-pre-wrap break-words [.text-message+&amp;]:mt-5 juice:w-full juice:items-end overflow-x-auto gap-2" data-message-author-role="assistant" data-message-id="cad8176f-721c-46ae-aa7b-8b8cf24f1dff" dir="auto">
+<div class="flex w-full flex-col gap-1 juice:empty:hidden juice:first:pt-[3px]">
+<div class="markdown prose w-full break-words dark:prose-invert light"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full text-token-text-primary" data-scroll-anchor="true" data-testid="conversation-turn-5" dir="auto">
+<div class="py-2 juice:py-[18px] px-3 text-base md:px-4 m-auto md:px-5 lg:px-1 xl:px-5">
+<div class="mx-auto flex flex-1 gap-3 text-base juice:gap-4 juice:md:gap-6 md:max-w-3xl lg:max-w-[40rem] xl:max-w-[48rem]">
+<div class="flex-shrink-0 flex flex-col relative items-end">
+<div>
+<div class="pt-0.5 juice:pt-0">
+<div class="gizmo-bot-avatar flex h-6 w-6 items-center justify-center overflow-hidden rounded-full juice:h-8 juice:w-8">
+<div class="relative p-1 rounded-sm flex items-center justify-center bg-token-main-surface-primary text-token-text-primary h-8 w-8"><svg class="icon-md" fill="none" height="41" role="img" viewbox="0 0 41 41" width="41" xmlns="http://www.w3.org/2000/svg"><text x="-9999" y="-9999">ChatGPT</text></svg></div>
+</div>
+</div>
+</div>
+</div>
+<div class="group/conversation-turn relative flex w-full min-w-0 flex-col agent-turn">
+<div class="flex-col gap-1 md:gap-3">
+<div class="flex flex-grow flex-col max-w-full">
+<div class="min-h-[20px] text-message flex flex-col items-start whitespace-pre-wrap break-words [.text-message+&amp;]:mt-5 juice:w-full juice:items-end overflow-x-auto gap-2" data-message-author-role="assistant" data-message-id="4e4d0f81-7147-41a0-9196-675f543e9fbe" dir="auto">
+<div class="flex w-full flex-col gap-1 juice:empty:hidden juice:first:pt-[3px]">
+<div class="markdown prose w-full break-words dark:prose-invert light">
+<ul>
+<li>主機名：stud.cycu.org</li>
+<li>用戶名：例如學號</li>
+<li>初始密碼：系統管理員提供的初始密碼</li>
+</ul>
+<h3>2. 使用 SSH 客戶端遠端登入</h3>
+<p>學員需要一個 SSH 客戶端來連接到主機。以下是使用不同操作系統的簡單說明：</p>
+<h4><strong>Windows</strong></h4>
+<ul>
+<li>可以使用 <a href="https://www.putty.org/" rel="noreferrer" target="_new">PuTTY</a> 或 <a rel="noreferrer" target="_new">Windows Terminal</a>。</li>
+<li>打開 PuTTY，輸入 <code>stud.cycu.org</code> 作為主機名，並輸入用戶名和初始密碼。</li>
+</ul>
+<h4><strong>macOS 和 Linux</strong></h4>
+<ul>
+<li>打開終端（Terminal）。</li>
+<li>輸入以下命令：
+<div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
+<div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md">ssh 學號@stud.cycu.org</div>
+</div>
+例如，如果學號是 <code>s1234567</code>，則輸入：
+<div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
+<div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md">ssh s1234567@stud.cycu.org</div>
+</div>
+</li>
+</ul>
+<h3>3. 修改初始密碼</h3>
+<p>首次登入後，應立即修改初始密碼。可以使用 <code>passwd</code> 命令來修改：</p>
+<div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
+<div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md">passwd</div>
+</div>
+<p>系統會提示輸入當前密碼，然後輸入並確認新密碼。</p>
+<h3>4. 基本操作</h3>
+<p>登入後，學員可以進行一些基本操作，例如：</p>
+<ul>
+<li><strong>查看當前目錄內容</strong>：
+<div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
+<div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md">ls</div>
+</div>
+</li>
+<li><strong>創建目錄</strong>：
+<div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
+<div class="overflow-y-auto p-4 text-left undefined" dir="ltr"><code class="!whitespace-pre hljs language-sh"><span class="hljs-built_in">mkdir</span> new_directory </code></div>
+</div>
+</li>
+<li><strong>編輯文件</strong>： 可以使用 <code>nano</code>、<code>vi</code> 或 <code>vim</code> 來編輯文件，例如：
+<div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
+<div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md">nano filename.txt</div>
+</div>
+</li>
+</ul>
+<h3>5. 設置 SSH 公鑰認證（可選）</h3>
+<p>為了提高安全性，可以設置 SSH 公鑰認證。學員需要在自己的電腦上生成 SSH 密鑰對，並將公鑰上傳到主機：</p>
+<h4><strong>生成 SSH 密鑰對</strong></h4>
+<p>在學員本地終端中執行以下命令（macOS 和 Linux）：</p>
+<div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
+<div class="overflow-y-auto p-4 text-left undefined" dir="ltr"><code class="!whitespace-pre hljs language-sh">ssh-keygen -t rsa -b 4096 -C <span class="hljs-string">"your_email@example.com"</span> </code></div>
+</div>
+<p>這將生成一對密鑰，通常存儲在 <code>~/.ssh/</code> 目錄下。</p>
+<h4><strong>上傳公鑰到主機</strong></h4>
+<p>將公鑰上傳到 stud.cycu.org 主機：</p>
+<div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
+<div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md">ssh-copy-id 學號@stud.cycu.org</div>
+</div>
+<h3>6. 確保資料安全</h3>
+<p>提醒學員注意資料備份和安全：</p>
+<ul>
+<li>定期備份重要數據。</li>
+<li>不要將敏感信息存儲在公共目錄中。</li>
+<li>使用安全的密碼和兩步驗證（如有可能）。</li>
+</ul>
+<h3>7. 獲取幫助和支持</h3>
+<p>如果在使用過程中遇到問題，可以：</p>
+<ul>
+<li>查閱系統提供的幫助文件或使用 <code>man</code> 命令（例如 <code>man ssh</code>）。</li>
+<li>與系統管理員或技術支持團隊聯繫。</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p><a href="https://mde.tw/wcm2024/downloads/wsgi_v2_py.txt">wsgi_v2_py</a>內截圖課表，用cmd解鎖課表。</p>
 <p>112年第1學期</p>
 <p><img alt="" height="28" src="https://41223136.github.io/wcm2024/images/%E7%AC%AC%E4%B8%80%E5%AD%B8%E6%9C%9F%E8%AA%B2%E8%A1%A8" width="400"/></p>
@@ -645,10 +848,7 @@ doc["threejsblock"].bind("click", threejsblock.do)
 <div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console2"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div2"></div>
-<!-- editor2 結束 --><hr/>
-<p>
-<script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
-</p>
+<!-- editor2 結束 --></div>
 </div>
 </div>
 </div>
@@ -660,6 +860,6 @@ doc["threejsblock"].bind("click", threejsblock.do)
 </div>
 </div>
 </div>
-</div>
+<p>stud.cycu.org 這台主機的帳號?然後呢</p>
 </li>
 </ol>

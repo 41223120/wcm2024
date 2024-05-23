@@ -2,7 +2,7 @@
         <head>
         <title>cmsimde_site</title>
         <meta charset="utf-8">
-<meta property="head" content="H2">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -142,41 +142,26 @@ img.add_border {
           </div>
 
         </header>
-    <div id="tipue_search_content">分組專案 << <a href='分組專案.html'>Previous</a> <a href='cmsimde.html'>Next</a> >> cmsimde<br /><h1>Brython-1</h1>
-<p>透過與 AI 對話了解每一行程式的意義與用法:</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">from browser import document, html
-from browser.widgets.dialog import InfoDialog
- 
-# Define a function to handle button click event
-def on_click(event):
-    # Get the value of the input field
-    input_value = document["zone"].value
-    # Output the value in the console
-    print(input_value)
- 
-# Create input element with id "zone"
-input_element = html.INPUT(id="zone")
- 
-# Create button element with id "echo" and text "click !"
-button_element = html.BUTTON("click !", id="echo")
- 
-# Add event listener to the button
-button_element.bind("click", on_click)
- 
-# Append input and button elements to the document body with "brython_div1"
-document["brython_div1"] &lt;= input_element
-document["brython_div1"] &lt;= button_element
- 
-def click(ev):
-    InfoDialog("Hello", f"Hello, {document['zone'].value} !")
- 
-# bind event 'click' on button to callback function
-document["echo"].bind("click", click)</pre>
-<p><span>從</span><code>browser</code><span>模組匯入</span><code>document</code><span>和</span><code>html</code><span>。在Brython 中，</span><code>document</code><span>物件類似於JavaScript 中的</span><code>document</code><span>對象，它代表了目前HTML文件。</span></p>
-<p><span></span><span></span><code>browser.widgets.dialog</code><span>模組</span><code>InfoDialog</code><span>類別導入了`<code>InfoDialog</code><span>類別。</span></span></p>
-<span># 定義一個函數來處理按鈕點擊事件 def on_click(event): # 取得輸入欄位的值 input_value = document["zone"].value # 將值輸出到控制台 print(input_value) # 建立帶有 id 的 input 元素"zone" input_element = html.INPUT(id="zone") # 建立id 為「echo」、文字為「click !」的按鈕元素button_element = html.BUTTON("click !", id="echo") # 為按鈕新增事件監聽器 button_element.bind("click", on_click) # 使用 "brython_div1" 將輸入和按鈕元素附加到文件正文 document[ "brython_div1"] &lt;= input_element document["brython_div1"] &lt;= button_element def click(ev): InfoDialog("Hello", f"Hello, {document['zone'].value} !") # 綁定事件' click ' on 按鈕回呼函數 document["echo"].bind("click", click)</span></li>
-</ol>
-<br />分組專案 << <a href='分組專案.html'>Previous</a> <a href='cmsimde.html'>Next</a> >> cmsimde</div>
+    <div id="tipue_search_content">3. 修改初始密碼 << <a href='3. 修改初始密碼.html'>Previous</a> <a href='5. 設置 SSH 公鑰認證（可選）.html'>Next</a> >> 5. 設置 SSH 公鑰認證（可選）<br /><h1>4. 基本操作</h1>
+<p>登入後，學員可以進行一些基本操作，例如：</p>
+<ul>
+<li><strong>查看當前目錄內容</strong>：
+<div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
+<div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md">ls</div>
+</div>
+</li>
+<li><strong>創建目錄</strong>：
+<div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
+<div class="overflow-y-auto p-4 text-left undefined" dir="ltr"><code class="!whitespace-pre hljs language-sh"><span class="hljs-built_in">mkdir</span> new_directory </code></div>
+</div>
+</li>
+<li><strong>編輯文件</strong>： 可以使用 <code>nano</code>、<code>vi</code> 或 <code>vim</code> 來編輯文件，例如：
+<div class="dark bg-gray-950 rounded-md border-[0.5px] border-token-border-medium">
+<div class="flex items-center relative text-token-text-secondary bg-token-main-surface-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-md">nano filename.txt</div>
+</div>
+</li>
+</ul>
+<br />3. 修改初始密碼 << <a href='3. 修改初始密碼.html'>Previous</a> <a href='5. 設置 SSH 公鑰認證（可選）.html'>Next</a> >> 5. 設置 SSH 公鑰認證（可選）</div>
 
     <!-- footer -->
       <div class="container">
