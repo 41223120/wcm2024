@@ -142,12 +142,47 @@ img.add_border {
           </div>
 
         </header>
-    <div id="tipue_search_content">W6 << <a href='W6.html'>Previous</a> <a href='W11.html'>Next</a> >> W11<br /><h1>W8</h1>
-<div class="gizmo-shadow-stroke flex h-6 w-6 items-center justify-center overflow-hidden rounded-full">1.教育的本質看課程內容:<span>培養對</span><strong>學習的渴望</strong><span>和</span><strong>對世界的好奇心，</strong><span>培養對</span><strong>學習的渴望</strong><span>和</span><strong>對世界的好奇心。</strong></div>
-<div class="gizmo-shadow-stroke flex h-6 w-6 items-center justify-center overflow-hidden rounded-full">
-<p dir="auto">廣泛的學習經驗：鼓勵學生<strong>探索不同科目和學科的廣泛教育的重要性</strong>。應該<strong>促進智識好奇心</strong>和<strong>批判性思維</strong>。</p>
-<p dir="auto">2.如何將影片嵌入網頁:上傳影片到youtube上，之後到自己的youtube影片下，點<span>分享</span>選擇第一個，把右側<span>超連結程式</span>碼複製，編輯網站，點Source code<span>，</span>把內容複製貼上。</p>
-<br />W6 << <a href='W6.html'>Previous</a> <a href='W11.html'>Next</a> >> W11</div>
+    <div id="tipue_search_content">W8 << <a href='W8.html'>Previous</a> <a href='W13.html'>Next</a> >> W13<br /><h1>W11</h1>
+<p>Brython程式環境:</p>
+<p>頁面 demo 在同一頁面下入多個線上 Ace 編輯器與執行按鈕 (<a href="https://zhe41223118.github.io/wcm2024/downloads/practice_html.txt">practice_html.txt</a><span> </span>動態頁面超文件).</p>
+<p><a href="https://zhe41223118.github.io/wcm2024/downloads/practice_html.txt">practice_html.txt</a><span> </span>動態頁面超文件應該可以在啟動 Brython 時, 設定將 .py 檔案放入 downloads/py 目錄中引用.</p>
+<p>亦即將所有對應的 html 也使用 Brython 產生, 然後寫為<span> </span><a href="https://docs.python.org/3/tutorial/classes.html">class</a><span> </span>後, 在範例導入時透過<span> </span><a href="https://docs.python.org/3/tutorial/classes.html#instance-objects">instance</a><span> </span>引用</p>
+<div>
+<div class="syntaxhighlighter html" id="highlighter_1596">
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">&lt;!-- 啟動 Brython --&gt;
+&lt;script&gt;
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+&lt;/script&gt;</pre>
+</div>
+</div>
+<p>從 1 累加到 100:</p>
+<p><button id="add1to100">1 add to 100</button></p>
+<p>將 iterable 與 iterator<span> </span><a href="https://home.gamer.com.tw/creationDetail.php?sn=4337438">相關說明</a>, 利用 Brython 與 Ace Editor 整理在這個頁面.</p>
+<div class="ace_editor ace-tm" id="kw_editor1"><textarea autocapitalize="off" autocorrect="off" class="ace_text-input" spellcheck="false" wrap="off"></textarea>
+<div aria-hidden="true" class="ace_gutter">
+<div class="ace_layer ace_gutter-layer ace_folding-enabled">
+<div class="ace_gutter-cell">1</div>
+<div class="ace_gutter-cell">2</div>
+</div>
+<div class="ace_gutter-active-line"><span class="ace_support ace_function">sum</span> <span class="ace_keyword ace_operator">=</span> <span class="ace_constant ace_numeric">1</span><span class="ace_keyword ace_operator">+</span><span class="ace_constant ace_numeric">2</span><span class="ace_keyword ace_operator">+</span><span class="ace_constant ace_numeric">3</span><span class="ace_keyword ace_operator">+</span><span class="ace_constant ace_numeric">4</span><span class="ace_keyword ace_operator">+</span><span class="ace_constant ace_numeric">5</span><span class="ace_keyword ace_operator">+</span><span class="ace_constant ace_numeric">6</span><span class="ace_keyword ace_operator">+</span><span class="ace_constant ace_numeric">7</span><span class="ace_keyword ace_operator">+</span><span class="ace_constant ace_numeric">8</span><span class="ace_keyword ace_operator">+</span><span class="ace_constant ace_numeric">9</span><span class="ace_keyword ace_operator">+</span><span class="ace_constant ace_numeric">10</span></div>
+</div>
+<div class="ace_scroller">
+<div class="ace_content">
+<div class="ace_layer ace_text-layer">
+<div class="ace_line"><span class="ace_support ace_function">print</span><span class="ace_paren ace_lparen">(</span><span class="ace_support ace_function">sum</span><span class="ace_paren ace_rparen">)</span></div>
+</div>
+<div class="ace_layer ace_marker-layer"></div>
+<div class="ace_layer ace_cursor-layer ace_hidden-cursors">
+<div class="ace_cursor"><label>Filename:<span> </span><input id="kw_filename" placeholder="input file name" type="text"/>.py</label><span> </span><input type="submit" value="Save"/></div>
+</div>
+</div>
+</div>
+</div>
+<p><button id="kw_show_console1">Run  Output</button><span> </span><button id="kw_clear_console1">清除輸出區</button><button id="clear_bd1">清除繪圖區</button><button onclick="window.location.reload()">Reload</button></p>
+<div><textarea autocomplete="off" id="kw_console1"></textarea></div>
+<br />W8 << <a href='W8.html'>Previous</a> <a href='W13.html'>Next</a> >> W13</div>
 
     <!-- footer -->
       <div class="container">
