@@ -143,6 +143,315 @@ img.add_border {
 
         </header>
     <div id="tipue_search_content">Brython-2 << <a href='Brython-2.html'>Previous</a> <br /><h1>期末專案</h1>
+1.專案題目:簡易象棋遊戲。</li>
+<li>進度:已完成棋盤格畫面，棋子的擺設，楚河漢界用兩排黑色格子代替，以及開始鈕的按鍵。</li>
+<li>遇到的問題:因為不知道如何問到讓她進行移動的動作，所以有些卡關，還在網路上尋找解決方案。</li>
+<li>小心得:現在我懂得要建立一個遊戲是多麼的不容易了，從最一開始資料的建構，還有架設遊戲網址以及IP位置的建設，到後面要一步步的與近端溝通每個步驟的刷新，在看網站哪裡有變化哪裡還需要再改進，到現在一直都還在學習怎麼更人性化更有效的與他溝通，我最終目標是希望能看見他AI與AI對打，不知道自己是否能完成，能做到這裡其實已經覺得自己有成長了，這禮拜再想辦法看可以做出什麼成績。</li>
+<li>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">&lt;!DOCTYPE html&gt;
+&lt;html lang="zh"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;象棋遊戲&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: tan;
+        }
+        #board {
+            display: grid;
+            grid-template-columns: repeat(9, 80px);
+            grid-template-rows: repeat(10, 80px);
+            gap: 1px;
+            background-color: black;
+            visibility: hidden;
+        }
+        .cell {
+            width: 80px;
+            height: 80px;
+            background-color: #f0d9b5;
+            position: relative;
+        }
+        .cell.black {
+            background-color: black;
+        }
+        .piece {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            transition: top 0.5s, left 0.5s; /* Animation for movement */
+        }
+        #start-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        #start-button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="start-message"&gt;點擊開始遊戲&lt;/div&gt;
+    &lt;button id="start-button"&gt;開始遊戲&lt;/button&gt;
+    &lt;div id="board"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        const initialPositions = {
+            'black': {
+                '車': [[0, 0], [8, 0]],
+                '馬': [[1, 0], [7, 0]],
+                '相': [[2, 0], [6, 0]],
+                '士': [[3, 0], [5, 0]],
+                '將': [[4, 0]],
+                '炮': [[1, 2], [7, 2]],
+                '卒': [[0, 3], [2, 3], [4, 3], [6, 3], [8, 3]]
+            },
+            'red': {
+                '車': [[0, 9], [8, 9]],
+                '馬': [[1, 9], [7, 9]],
+                '象': [[2, 9], [6, 9]],
+                '仕': [[3, 9], [5, 9]],
+                '帥': [[4, 9]],
+                '炮': [[1, 7], [7, 7]],
+                '兵': [[0, 6], [2, 6], [4, 6], [6, 6], [8, 6]]
+            }
+        };
+
+        const board = document.getElementById('board');
+        const startMessage = document.getElementById('start-message');
+        const startButton = document.getElementById('start-button');
+
+        const state = {
+            selectedPiece: null,
+            turn: 'red',
+            gameStatus: 'waitingToStart',
+        };
+
+        function createCell(x, y) {
+            const cell = document.createElement('div');
+            cell.className = 'cell';
+            if (y === 4 || y === 5) {
+                cell.classList.add('black');
+            }
+            cell.x = x;
+            cell.y = y;
+            cell.cellIndex = y * 9 + x;
+            return cell;
+        }
+
+        function createPiece(name, color) {
+            const piece = document.createElement('div');
+            piece.className = 'piece';
+            piece.textContent = name;
+            piece.style.color = color === 'black' ? 'black' : 'red';
+            piece.dataset.color = color;
+            piece.dataset.name = name;
+            return piece;
+        }
+
+        function initializeBoard() {
+            for (let y = 0; y &lt; 10; y++) {
+                for (let x = 0; x &lt; 9; x++) {
+                    const cell = createCell(x, y);
+                    board.appendChild(cell);
+                }
+            }
+            for (const [color, pieces] of Object.entries(initialPositions)) {
+                for (const [name, positions] of Object.entries(pieces)) {
+                    positions.forEach(([x, y]) =&gt; {
+                        const piece = createPiece(name, color);
+                        const cell = board.children[y * 9 + x];
+                        cell.appendChild(piece);
+                        piece.style.top = `${cell.offsetTop}px`;
+                        piece.style.left = `${cell.offsetLeft}px`;
+                    });
+                }
+            }
+        }
+
+        function isValidMove(piece, fromX, fromY, toX, toY) {
+            const name = piece.dataset.name;
+            const color = piece.dataset.color;
+            const dx = Math.abs(fromX - toX);
+            const dy = Math.abs(fromY - toY);
+
+            switch (name) {
+                case '車':
+                    if (fromX !== toX &amp;&amp; fromY !== toY) return false;
+                    if (fromX === toX) {
+                        const [min, max] = fromY &lt; toY ? [fromY, toY] : [toY, fromY];
+                        for (let i = min + 1; i &lt; max; i++) {
+                            if (board.children[i * 9 + fromX].hasChildNodes()) return false;
+                        }
+                    } else {
+                        const [min, max] = fromX &lt; toX ? [fromX, toX] : [toX, fromX];
+                        for (let i = min + 1; i &lt; max; i++) {
+                            if (board.children[fromY * 9 + i].hasChildNodes()) return false;
+                        }
+                    }
+                    break;
+                case '馬':
+                    if (!((dx === 2 &amp;&amp; dy === 1) || (dx === 1 &amp;&amp; dy === 2))) return false;
+                    if (dx === 2) {
+                        const midX = (fromX + toX) / 2;
+                        if (board.children[fromY * 9 + midX].hasChildNodes()) return false;
+                    } else {
+                        const midY = (fromY + toY) / 2;
+                        if (board.children[midY * 9 + fromX].hasChildNodes()) return false;
+                    }
+                    break;
+                case '相':
+                case '象':
+                    if (dx !== 2 || dy !== 2) return false;
+                    if (color === 'black' &amp;&amp; toY &gt; 4) return false;
+                    if (color === 'red' &amp;&amp; toY &lt; 5) return false;
+                    const midX = (fromX + toX) / 2;
+                    const midY = (fromY + toY) / 2;
+                    if (board.children[midY * 9 + midX].hasChildNodes()) return false;
+                    break;
+                case '士':
+                case '仕':
+                    if (dx !== 1 || dy !== 1) return false;
+                    if (color === 'black' &amp;&amp; (toX &lt; 3 || toX &gt; 5 || toY &gt; 2)) return false;
+                    if (color === 'red' &amp;&amp; (toX &lt; 3 || toX &gt; 5 || toY &lt; 7)) return false;
+                    break;
+                case '將':
+                case '帥':
+                    if (dx + dy !== 1) return false;
+                    if (color === 'black' &amp;&amp; (toX &lt; 3 || toX &gt; 5 || toY &gt; 2)) return false;
+                    if (color === 'red' &amp;&amp; (toX &lt; 3 || toX &gt; 5 || toY &lt; 7)) return false;
+                    break;
+                case '炮':
+                    if (fromX !== toX &amp;&amp; fromY !== toY) return false;
+                    if (fromX === toX) {
+                        const [min, max] = fromY &lt; toY ? [fromY, toY] : [toY, fromY];
+                        let piecesInBetween = 0;
+                        for (let i = min + 1; i &lt; max; i++) {
+                            if (board.children[i * 9 + fromX].hasChildNodes()) piecesInBetween++;
+                        }
+                        if (piecesInBetween === 1) return board.children[toY * 9 + toX].hasChildNodes();
+                        return piecesInBetween === 0;
+                    } else {
+                        const [min, max] = fromX &lt; toX ? [fromX, toX] : [toX, fromX];
+                        let piecesInBetween = 0;
+                        for (let i = min + 1; i &lt; max; i++) {
+                            if (board.children[fromY * 9 + i].hasChildNodes()) piecesInBetween++;
+                        }
+                        if (piecesInBetween === 1) return board.children[toY * 9 + toX].hasChildNodes();
+                        return piecesInBetween === 0;
+                    }
+                case '卒':
+                case '兵':
+                    if (color === 'black') {
+                        if (fromY &lt; 5) {
+                            if (dx + dy !== 1) return false;
+                            if (dy === 1 &amp;&amp; dx === 0) return fromY &lt; toY;
+                            return dx === 1 &amp;&amp; dy === 0;
+                        } else {
+                            return dx === 0 &amp;&amp; toY - fromY === 1;
+                        }
+                    } else {
+                        if (fromY &gt; 4) {
+                            if (dx + dy !== 1) return false;
+                            if (dy === 1 &amp;&amp; dx === 0) return toY &lt; fromY;
+                            return dx === 1 &amp;&amp; dy === 0;
+                        } else {
+                            return dx === 0 &amp;&amp; fromY - toY === 1;
+                        }
+                    }
+            }
+            return true;
+        }
+
+        function movePiece(piece, toX, toY) {
+            const fromX = piece.parentElement.x;
+            const fromY = piece.parentElement.y;
+            const cell = board.children[toY * 9 + toX];
+            cell.appendChild(piece);
+            piece.style.top = `${cell.offsetTop}px`;
+            piece.style.left = `${cell.offsetLeft}px`;
+        }
+
+        function getValidMoves(piece) {
+            const fromX = piece.parentElement.x;
+            const fromY = piece.parentElement.y;
+            const validMoves = [];
+
+            for (let toY = 0; toY &lt; 10; toY++) {
+                for (let toX = 0; toX &lt; 9; toX++) {
+                    if ((toX !== fromX || toY !== fromY) &amp;&amp; isValidMove(piece, fromX, fromY, toX, toY)) {
+                        validMoves.push([toX, toY]);
+                    }
+                }
+            }
+
+            return validMoves;
+        }
+
+        function getRandomMove(piece) {
+            const validMoves = getValidMoves(piece);
+            if (validMoves.length === 0) return null;
+            const randomIndex = Math.floor(Math.random() * validMoves.length);
+            return validMoves[randomIndex];
+        }
+
+        async function aiMove(color) {
+            const pieces = Array.from(board.getElementsByClassName('piece'))
+                .filter(piece =&gt; piece.dataset.color === color);
+            let moved = false;
+            while (!moved) {
+                const piece = pieces[Math.floor(Math.random() * pieces.length)];
+                const move = getRandomMove(piece);
+                if (move) {
+                    movePiece(piece, move[0], move[1]);
+                    moved = true;
+                    await new Promise(resolve =&gt; setTimeout(resolve, 1000)); // Delay for visualizing the move
+                }
+            }
+        }
+
+        async function startGame() {
+            startMessage.style.visibility = 'hidden';
+            startButton.style.visibility = 'hidden';
+            board.style.visibility = 'visible';
+            state.gameStatus = 'inProgress';
+
+            while (state.gameStatus === 'inProgress') {
+                await aiMove(state.turn);
+                state.turn = state.turn === 'red' ? 'black' : 'red';
+                // Add condition to check for end of the game and set state.gameStatus to 'ended'
+                // For simplicity, this demo does not implement checkmate detection.
+            }
+        }
+
+        startButton.addEventListener('click', startGame);
+        initializeBoard();
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p></p>
 </li>
 </ol><br />Brython-2 << <a href='Brython-2.html'>Previous</a> </div>
 
