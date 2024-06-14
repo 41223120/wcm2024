@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>./</loc>
-<lastmod>2024-06-14T05:32:06-00:00</lastmod>
+<lastmod>2024-06-14T05:36:41-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./archives.html</loc>
-<lastmod>2024-06-14T05:32:06-00:00</lastmod>
+<lastmod>2024-06-14T05:36:41-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tags.html</loc>
-<lastmod>2024-06-14T05:32:06-00:00</lastmod>
+<lastmod>2024-06-14T05:36:41-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./categories.html</loc>
-<lastmod>2024-06-14T05:32:06-00:00</lastmod>
+<lastmod>2024-06-14T05:36:41-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -34,6 +34,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>./pages/about/</loc>
 <lastmod>2024-06-13T14:14:47+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>./2024-Spring-W13-blog-tutorial.html</loc>
+<lastmod>2024-06-14T05:36:09+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -123,6 +130,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>./category/w13.html</loc>
+<lastmod>2024-06-14T05:36:09+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>./category/w2.html</loc>
 <lastmod>2024-06-14T03:11:48+08:06</lastmod>
 <changefreq>daily</changefreq>
@@ -166,14 +180,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>./tag/wang-zhi-bian-xie.html</loc>
-<lastmod>2024-06-14T05:31:54+08:06</lastmod>
+<lastmod>2024-06-14T05:36:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./author/da.html</loc>
-<lastmod>2024-06-14T05:31:54+08:06</lastmod>
+<lastmod>2024-06-14T05:36:09+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

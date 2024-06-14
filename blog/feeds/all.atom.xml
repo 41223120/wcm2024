@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理系統</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2024-06-14T05:31:54+08:00</updated><entry><title>2024 W11</title><link href="./2024-Spring-W11-blog-tutorial.html" rel="alternate"></link><published>2024-05-02T11:00:00+08:00</published><updated>2024-06-14T05:31:54+08:00</updated><author><name>Da</name></author><id>tag:None,2024-05-02:./2024-Spring-W11-blog-tutorial.html</id><summary type="html">&lt;p&gt;w11 上課內容&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理系統</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2024-06-14T05:36:09+08:00</updated><entry><title>2024 W13</title><link href="./2024-Spring-W13-blog-tutorial.html" rel="alternate"></link><published>2024-05-16T11:00:00+08:00</published><updated>2024-06-14T05:36:09+08:00</updated><author><name>Da</name></author><id>tag:None,2024-05-16:./2024-Spring-W13-blog-tutorial.html</id><summary type="html">&lt;p&gt;w13 上課內容&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;w13 上課內容&lt;/p&gt;
+
+
+&lt;h1&gt;Linux&lt;/h1&gt;
+&lt;p&gt;1.能不能讓每一位學員都擁有遠端登入 stud.cycu.org 這台主機的帳號?
+2.擁有帳號, 然後呢?&lt;/p&gt;</content><category term="W13"></category><category term="網誌編寫"></category></entry><entry><title>2024 W11</title><link href="./2024-Spring-W11-blog-tutorial.html" rel="alternate"></link><published>2024-05-02T11:00:00+08:00</published><updated>2024-06-14T05:31:54+08:00</updated><author><name>Da</name></author><id>tag:None,2024-05-02:./2024-Spring-W11-blog-tutorial.html</id><summary type="html">&lt;p&gt;w11 上課內容&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;w11 上課內容&lt;/p&gt;
 
 
