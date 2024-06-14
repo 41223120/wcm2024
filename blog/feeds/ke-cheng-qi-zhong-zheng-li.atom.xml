@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理系統 - 課程期中整理</title><link href="./" rel="alternate"></link><link href="./feeds/ke-cheng-qi-zhong-zheng-li.atom.xml" rel="self"></link><id>./</id><updated>2024-06-14T05:25:01+08:00</updated><entry><title>2024 課程期中整理</title><link href="./2024-Spring-%E8%AA%B2%E7%A8%8B%E6%9C%9F%E4%B8%AD%E6%95%B4%E7%90%86-blog-tutorial.html" rel="alternate"></link><published>2024-03-14T11:00:00+08:00</published><updated>2024-06-14T05:25:01+08:00</updated><author><name>Da</name></author><id>tag:None,2024-03-14:./2024-Spring-課程期中整理-blog-tutorial.html</id><summary type="html">&lt;p&gt;課程期中整理 上課內容&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;課程期中整理 上課內容&lt;/p&gt;
+
+
+&lt;h1&gt;網頁式內容管理&lt;/h1&gt;
+&lt;p&gt;1.如何建立 Github 上的網站?
+2.Github如何管理內容?
+3.Github如何建立網頁系統中的網誌?&lt;/p&gt;
+&lt;h1&gt;Python 程式系統&lt;/h1&gt;
+&lt;p&gt;1.舊 Python 建立新的可攜環境?&lt;/p&gt;
+&lt;h1&gt;AI工具&lt;/h1&gt;
+&lt;p&gt;1.ChatGPT和Gemini Pro 這兩個工具可以協助我們解決什麼問題?
+2.為什麼有這些工具?
+3.有人卻覺得還好而已, 並無法從中挖出甚麼資料?&lt;/p&gt;
+&lt;h1&gt;網頁上的 IDE&lt;/h1&gt;
+&lt;p&gt;1.IDE 是甚麼?
+2.可以將 Replit、Codespaces 與 Gitpod 當成 IDE 用來開發各種程式嗎?
+3.學會網頁上的各種 IDE 之後, 有沒有甚麼感想或心得?&lt;/p&gt;</content><category term="課程期中整理"></category><category term="網誌編寫"></category></entry></feed>
