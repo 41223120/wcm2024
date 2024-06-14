@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理系統 - 期末專案</title><link href="./" rel="alternate"></link><link href="./feeds/qi-mo-zhuan-an.atom.xml" rel="self"></link><id>./</id><updated>2024-06-14T06:01:37+08:00</updated><entry><title>2024 期末專案</title><link href="./2024-Spring-%E6%9C%9F%E6%9C%AB%E5%B0%88%E6%A1%88-blog-tutorial.html" rel="alternate"></link><published>2024-05-30T11:00:00+08:00</published><updated>2024-06-14T06:01:37+08:00</updated><author><name>Da</name></author><id>tag:None,2024-05-30:./2024-Spring-期末專案-blog-tutorial.html</id><summary type="html">&lt;p&gt;期末專案 上課內容&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;期末專案 上課內容&lt;/p&gt;
+
+
+&lt;h1&gt;專案題目:簡易象棋遊戲&lt;/h1&gt;
+&lt;p&gt;1.進度
+2.遇到的問題
+3.小心得&lt;/p&gt;</content><category term="期末專案"></category><category term="網誌編寫"></category></entry></feed>
