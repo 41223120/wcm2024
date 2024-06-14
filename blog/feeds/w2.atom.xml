@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理系統 - w2</title><link href="./" rel="alternate"></link><link href="./feeds/w2.atom.xml" rel="self"></link><id>./</id><updated>2024-06-13T14:42:24+08:00</updated><entry><title>2024 W2</title><link href="./2024-Spring-w2-blog-tutorial.html" rel="alternate"></link><published>2024-06-13T11:00:00+08:00</published><updated>2024-06-13T14:42:24+08:00</updated><author><name>kmol</name></author><id>tag:None,2024-06-13:./2024-Spring-w2-blog-tutorial.html</id><summary type="html">&lt;p&gt;w2 上課內容&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理系統 - W2</title><link href="./" rel="alternate"></link><link href="./feeds/w2.atom.xml" rel="self"></link><id>./</id><updated>2024-06-14T03:11:48+08:00</updated><entry><title>2024 W2</title><link href="./2024-Spring-W2-blog-tutorial.html" rel="alternate"></link><published>2024-02-29T11:00:00+08:00</published><updated>2024-06-14T03:11:48+08:00</updated><author><name>Da</name></author><id>tag:None,2024-02-29:./2024-Spring-W2-blog-tutorial.html</id><summary type="html">&lt;p&gt;w2 上課內容&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;w2 上課內容&lt;/p&gt;
 
 
 &lt;h1&gt;內容管理系統&lt;/h1&gt;
-&lt;p&gt;利用 Github Codespaces 維護個人與分組網站&lt;/p&gt;</content><category term="w2"></category><category term="網誌編寫"></category></entry></feed>
+&lt;p&gt;利用 Github Codespaces 維護個人與分組網站&lt;/p&gt;</content><category term="W2"></category><category term="網誌編寫"></category></entry></feed>
