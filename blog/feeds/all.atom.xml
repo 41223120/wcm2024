@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理系統</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2024-06-14T05:42:25+08:00</updated><entry><title>2024 W14</title><link href="./2024-Spring-W14-blog-tutorial.html" rel="alternate"></link><published>2024-05-23T11:00:00+08:00</published><updated>2024-06-14T05:39:07+08:00</updated><author><name>Da</name></author><id>tag:None,2024-05-23:./2024-Spring-W14-blog-tutorial.html</id><summary type="html">&lt;p&gt;w14 上課內容&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理系統</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2024-06-14T05:47:55+08:00</updated><entry><title>2024 W14</title><link href="./2024-Spring-W14-blog-tutorial.html" rel="alternate"></link><published>2024-05-23T11:00:00+08:00</published><updated>2024-06-14T05:39:07+08:00</updated><author><name>Da</name></author><id>tag:None,2024-05-23:./2024-Spring-W14-blog-tutorial.html</id><summary type="html">&lt;p&gt;w14 上課內容&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;w14 上課內容&lt;/p&gt;
 
 
@@ -10,7 +10,13 @@
 
 &lt;h1&gt;Linux&lt;/h1&gt;
 &lt;p&gt;1.能不能讓每一位學員都擁有遠端登入 stud.cycu.org 這台主機的帳號?
-2.擁有帳號, 然後呢?&lt;/p&gt;</content><category term="W13"></category><category term="網誌編寫"></category></entry><entry><title>2024 W11</title><link href="./2024-Spring-W11-blog-tutorial.html" rel="alternate"></link><published>2024-05-02T11:00:00+08:00</published><updated>2024-06-14T05:31:54+08:00</updated><author><name>Da</name></author><id>tag:None,2024-05-02:./2024-Spring-W11-blog-tutorial.html</id><summary type="html">&lt;p&gt;w11 上課內容&lt;/p&gt;
+2.擁有帳號, 然後呢?&lt;/p&gt;</content><category term="W13"></category><category term="網誌編寫"></category></entry><entry><title>2024 Brython-1</title><link href="./2024-Spring-Brython-1-blog-tutorial.html" rel="alternate"></link><published>2024-05-02T11:00:00+08:00</published><updated>2024-06-14T05:47:55+08:00</updated><author><name>Da</name></author><id>tag:None,2024-05-02:./2024-Spring-Brython-1-blog-tutorial.html</id><summary type="html">&lt;p&gt;Brython-1 上課內容&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;Brython-1 上課內容&lt;/p&gt;
+
+
+&lt;h1&gt;透過與 AI 對話了解每一行程式的意義與用法&lt;/h1&gt;
+&lt;p&gt;從browser模組匯入document和html。在Brython 中，document物件類似於JavaScript 中的document對象，它代表了目前HTML文件。
+browser.widgets.dialog模組InfoDialog類別導入了`InfoDialog類別。&lt;/p&gt;</content><category term="Brython-1"></category><category term="網誌編寫"></category></entry><entry><title>2024 W11</title><link href="./2024-Spring-W11-blog-tutorial.html" rel="alternate"></link><published>2024-05-02T11:00:00+08:00</published><updated>2024-06-14T05:31:54+08:00</updated><author><name>Da</name></author><id>tag:None,2024-05-02:./2024-Spring-W11-blog-tutorial.html</id><summary type="html">&lt;p&gt;w11 上課內容&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;w11 上課內容&lt;/p&gt;
 
 

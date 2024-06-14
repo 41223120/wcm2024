@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>./</loc>
-<lastmod>2024-06-14T05:42:45-00:00</lastmod>
+<lastmod>2024-06-14T05:48:07-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./archives.html</loc>
-<lastmod>2024-06-14T05:42:45-00:00</lastmod>
+<lastmod>2024-06-14T05:48:07-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tags.html</loc>
-<lastmod>2024-06-14T05:42:45-00:00</lastmod>
+<lastmod>2024-06-14T05:48:07-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./categories.html</loc>
-<lastmod>2024-06-14T05:42:45-00:00</lastmod>
+<lastmod>2024-06-14T05:48:07-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -48,6 +48,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>./2024-Spring-W13-blog-tutorial.html</loc>
 <lastmod>2024-06-14T05:36:09+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>./2024-Spring-Brython-1-blog-tutorial.html</loc>
+<lastmod>2024-06-14T05:47:55+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -119,6 +126,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <loc>./2024-Spring-w1-blog-tutorial.html</loc>
 <lastmod>2024-06-13T14:14:47+08:00</lastmod>
 <changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>./category/brython-1.html</loc>
+<lastmod>2024-06-14T05:47:55+08:06</lastmod>
+<changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -208,14 +222,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>./tag/wang-zhi-bian-xie.html</loc>
-<lastmod>2024-06-14T05:42:25+08:06</lastmod>
+<lastmod>2024-06-14T05:47:55+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./author/da.html</loc>
-<lastmod>2024-06-14T05:42:25+08:06</lastmod>
+<lastmod>2024-06-14T05:47:55+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
