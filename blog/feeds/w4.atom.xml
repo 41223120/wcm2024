@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理系統 - W4</title><link href="./" rel="alternate"></link><link href="./feeds/w4.atom.xml" rel="self"></link><id>./</id><updated>2024-06-14T03:20:19+08:00</updated><entry><title>2024 W4</title><link href="./2024-Spring-W4-blog-tutorial.html" rel="alternate"></link><published>2024-03-14T11:00:00+08:00</published><updated>2024-06-14T03:20:19+08:00</updated><author><name>Da</name></author><id>tag:None,2024-03-14:./2024-Spring-W4-blog-tutorial.html</id><summary type="html">&lt;p&gt;W4 上課內容&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;W4 上課內容&lt;/p&gt;
+
+
+&lt;h1&gt;建立網站&lt;/h1&gt;
+&lt;p&gt;網站指的是 Web site針對網頁瀏覽器檢視的內容加以管理，利用 Github 所提供的 Pages 功能來建立網頁進行管理。&lt;/p&gt;
+&lt;h1&gt;Replit靜態網站檢視&lt;/h1&gt;
+&lt;p&gt;要執行動態網站，可以在 Shell 執行 python3 main.py 或者使用 Replit 的 Run 按鍵， Shell 執行 python3 main2.py 就可以執行倉儲內的靜態網站檢視&lt;/p&gt;
+&lt;h1&gt;Replit建立分組倉儲權限&lt;/h1&gt;
+&lt;p&gt;分組網站 import 到 Replit, 必須自行在 /home/runner/.ssh 目錄下建立 id_rsa 與 config (id_rsa.pub 必須登錄到 Github 對應帳號)
+ssh.py 程式內容&lt;/p&gt;</content><category term="W4"></category><category term="網誌編寫"></category></entry></feed>
