@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理系統</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2024-06-14T05:47:55+08:00</updated><entry><title>2024 W14</title><link href="./2024-Spring-W14-blog-tutorial.html" rel="alternate"></link><published>2024-05-23T11:00:00+08:00</published><updated>2024-06-14T05:39:07+08:00</updated><author><name>Da</name></author><id>tag:None,2024-05-23:./2024-Spring-W14-blog-tutorial.html</id><summary type="html">&lt;p&gt;w14 上課內容&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理系統</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2024-06-14T05:51:14+08:00</updated><entry><title>2024 W14</title><link href="./2024-Spring-W14-blog-tutorial.html" rel="alternate"></link><published>2024-05-23T11:00:00+08:00</published><updated>2024-06-14T05:39:07+08:00</updated><author><name>Da</name></author><id>tag:None,2024-05-23:./2024-Spring-W14-blog-tutorial.html</id><summary type="html">&lt;p&gt;w14 上課內容&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;w14 上課內容&lt;/p&gt;
 
 
@@ -82,7 +82,11 @@ ssh.py 程式內容&lt;/p&gt;</content><category term="W4"></category><category 
 
 
 &lt;h1&gt;內容管理系統&lt;/h1&gt;
-&lt;p&gt;常用的git指令&lt;/p&gt;</content><category term="W3"></category><category term="網誌編寫"></category></entry><entry><title>2024 W2</title><link href="./2024-Spring-W2-blog-tutorial.html" rel="alternate"></link><published>2024-02-29T11:00:00+08:00</published><updated>2024-06-14T03:11:48+08:00</updated><author><name>Da</name></author><id>tag:None,2024-02-29:./2024-Spring-W2-blog-tutorial.html</id><summary type="html">&lt;p&gt;w2 上課內容&lt;/p&gt;
+&lt;p&gt;常用的git指令&lt;/p&gt;</content><category term="W3"></category><category term="網誌編寫"></category></entry><entry><title>2024 cmsimde</title><link href="./2024-Spring-cmsimde-blog-tutorial.html" rel="alternate"></link><published>2024-03-07T11:00:00+08:00</published><updated>2024-06-14T05:51:14+08:00</updated><author><name>Da</name></author><id>tag:None,2024-03-07:./2024-Spring-cmsimde-blog-tutorial.html</id><summary type="html">&lt;p&gt;cmsimde 上課內容&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;cmsimde 上課內容&lt;/p&gt;
+
+
+&lt;h1&gt;指令說明&lt;/h1&gt;</content><category term="cmsimde"></category><category term="網誌編寫"></category></entry><entry><title>2024 W2</title><link href="./2024-Spring-W2-blog-tutorial.html" rel="alternate"></link><published>2024-02-29T11:00:00+08:00</published><updated>2024-06-14T03:11:48+08:00</updated><author><name>Da</name></author><id>tag:None,2024-02-29:./2024-Spring-W2-blog-tutorial.html</id><summary type="html">&lt;p&gt;w2 上課內容&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;w2 上課內容&lt;/p&gt;
 
 
